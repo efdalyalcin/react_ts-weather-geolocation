@@ -33,7 +33,7 @@ export default function FormButton() {
       </button>
       <div
         className={cn(
-          'absolute top-16 right-2 z-10 opacity-100 w-max p-4 border border-slate-500 rounded-lg',
+          'absolute right-0 sm:right-2 top-16 z-10 opacity-100 w-max p-4 border border-slate-500 rounded-lg',
           'transition-transform duration-300 bg-white',
           {
             '-translate-y-96': !isFormVisible,
