@@ -82,7 +82,7 @@ export default function WeatherForecast() {
   }
 
   return (
-    <div className="max-w-screen-md mx-auto mt-6 px-4 flex justify-center relative">
+    <div className="max-w-screen-md mx-auto px-4 flex justify-center relative">
       {formattedData ? (
         <Line data={formattedData} options={options} />
       ) : (
