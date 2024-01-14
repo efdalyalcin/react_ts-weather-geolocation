@@ -38,6 +38,8 @@ This Weather Forecast app leverages geolocation to provide you with up-to-date w
 
 - If you encounter a CORS error, try uncommenting the code in the WeatherForecast component that uses mock data. Ensure your API key is correctly added to getWeatherForecast.ts.
 
+- The mock data is a response taken from the OpenWeatherMap API at Saturday, January 13, 2024 10:32:15 PM
+
 ### Performance Consideration:
 
 - Functions are not wrapped in useCallback unless passed to another component or used as a dependency. Memoization may increase memory use without bringing significant advantages. I have been reading about this topic and [here](https://medium.com/credera-engineering/when-should-usememo-and-usecallback-be-used-and-when-not-complete-with-examples-df13cd7a6cf4) is the article I gained insights from.
@@ -52,5 +54,10 @@ This Weather Forecast app leverages geolocation to provide you with up-to-date w
 
 - In this project only the default states of the components are documented.
 
-This app is built with Vite, React, TypeScript, npm, Storybook, Vitest, Jest and Tailwind CSS.
+## Testing:
+
+To ensure the proper functioning of hooks and functions in this Weather Forecast app, you can run tests:
+`npm run test`
+
+This app is built with Vite, React, TypeScript, Tailwind CSS, npm, Storybook, Vitest and React Testing Library.
 Feel free to explore!
