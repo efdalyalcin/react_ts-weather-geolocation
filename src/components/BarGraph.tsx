@@ -1,23 +1,8 @@
 import useBarGraphInputStore from '@/store/barGraphInputStore';
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-} from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
+import { Chart, registerables } from 'chart.js';
+Chart.register(...registerables);
 
 const createData = (data: number[]) => {
   return {
@@ -51,8 +36,8 @@ export default function BarGraph() {
   const data = createData([inputOne, inputTwo, inputThree, inputFour]);
 
   return (
-    <>
+    <div className="max-w-screen-md mx-auto mt-6 px-4 flex justify-center">
       <Bar data={data} />
-    </>
+    </div>
   );
 }

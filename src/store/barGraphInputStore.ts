@@ -1,5 +1,5 @@
 /* since zustand is lightweight, no need to create providers and easy to use
-  I prefered to use instead of Context or Redux
+  I preferred to use it instead of Context or Redux
 */
 import { create } from 'zustand';
 

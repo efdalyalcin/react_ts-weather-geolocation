@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 
-type GeolocationData = {
+type GeolocationDataT = {
   latitude: number;
   longitude: number;
   error: string | null;
 };
 
-const useGeolocation = (): GeolocationData => {
-  const [geolocationData, setGeolocationData] = useState<GeolocationData>({
+const useGeolocation = (): GeolocationDataT => {
+  const [geolocationData, setGeolocationData] = useState<GeolocationDataT>({
     latitude: 52.3983,
     longitude: 13.0609,
     error: null,
