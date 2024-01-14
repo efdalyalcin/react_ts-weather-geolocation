@@ -72,7 +72,7 @@ export default function WeatherForecast() {
   // const formattedData = data
   //   ? createLineChartDataFromWeatherForecast(data)
   //   : null;
-  const formattedData = createLineChartDataFromWeatherForecast(mockData);
+  const formattedData = null; //createLineChartDataFromWeatherForecast(mockData);
 
   // geolocation error alert
   if (error) {
@@ -84,7 +84,9 @@ export default function WeatherForecast() {
       {formattedData ? (
         <Line data={formattedData} options={options} />
       ) : (
-        <p>Weather forecast data is not available.</p>
+        <p className="mt-4 text-slate-600">
+          Weather forecast data is not available for now!
+        </p>
       )}
     </div>
   );

@@ -5,7 +5,7 @@ import WeatherForecast from '@/components/WeatherForecast';
 
 export default function Home() {
   return (
-    <main className="h-screen relative max-w-7xl mx-auto min-w-96">
+    <main className="relative max-w-7xl mx-auto min-w-96">
       <FormButton />
       <BarGraph />
       <WeatherForecast />

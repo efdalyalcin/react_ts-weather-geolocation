@@ -10,7 +10,7 @@ const createData = (data: number[]) => {
     datasets: [
       {
         label: 'Generated Chart',
-        data: [...data],
+        data,
         backgroundColor: [
           'rgba(3, 57, 108, 0.3)',
           'rgba(0, 91, 150, 0.3)',

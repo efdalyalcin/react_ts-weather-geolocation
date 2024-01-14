@@ -63,7 +63,7 @@ export default function FormButton() {
             onClick={handleFormVisibility}
             className={cn(buttonClassNames, ' bg-slate-500 hover:bg-slate-400')}
           >
-            Close
+            Cancel
           </button>
         </div>
       </div>
