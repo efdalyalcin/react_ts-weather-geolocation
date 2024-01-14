@@ -1,6 +1,8 @@
 import { WeatherForecastT } from '@/types/weatherForecast';
 
 const BASE_URL = 'https://api.openweathermap.org/data/3.0';
+
+// I am using a .env file to reach the API_KEY, please input yours here
 const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 
 export const getWeatherForecast = (latitude: number, longitude: number) => {
