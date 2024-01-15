@@ -1,5 +1,7 @@
 # Weather Forecast App using Geolocation
 
+You can view the page from [here](https://efdalyalcin.github.io/react_ts-weather-geolocation). Please note that I have deactivated my API_KEY, so you may not see the weather forecast according to the OpenWeatherMap API response. For accurate content, please use the app locally by following the instructions provided.
+
 ## General usage:
 
 This Weather Forecast app leverages geolocation to provide you with up-to-date weather information. To get started, follow these steps:
