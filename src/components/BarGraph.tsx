@@ -10,7 +10,7 @@ const createData = (data: number[]) => {
     datasets: [
       {
         label: 'Generated Chart',
-        data: [...data],
+        data,
         backgroundColor: [
           'rgba(3, 57, 108, 0.3)',
           'rgba(0, 91, 150, 0.3)',
@@ -36,7 +36,7 @@ export default function BarGraph() {
   const data = createData([inputOne, inputTwo, inputThree, inputFour]);
 
   return (
-    <div className="max-w-screen-md mx-auto mt-6 px-4 flex justify-center">
+    <div className="max-w-screen-md mx-auto px-4 flex justify-center">
       <Bar data={data} />
     </div>
   );

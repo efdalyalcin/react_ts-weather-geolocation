@@ -15,6 +15,8 @@ export default function NumberInputField({ label, storeId }: InputFieldPropsT) {
         return inputThree;
       case 'inputFour':
         return inputFour;
+      default:
+        return 0;
     }
   };
 

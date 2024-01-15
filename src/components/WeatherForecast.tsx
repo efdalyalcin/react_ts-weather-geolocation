@@ -3,7 +3,7 @@ import { getWeatherForecast } from '@/services/getWeatherForecast';
 import { useEffect, useState } from 'react';
 import { WeatherForecastT } from '@/types/weatherForecast';
 import formatDate from '@/helpers/formatDate';
-import { mockData } from '@/services/data';
+import { mockData } from '@/services/mockData';
 
 import { Line } from 'react-chartjs-2';
 import { Chart, registerables } from 'chart.js';
@@ -29,7 +29,7 @@ const options = {
 //#endregion
 
 const createLineChartDataFromWeatherForecast = (data: WeatherForecastT) => {
-  const labels = [formatDate(data.current.dt)];
+  const labels = ['Current'];
   const temperatures = [data.current.temp];
 
   data.daily.forEach((daily) => {
@@ -55,36 +55,40 @@ export default function WeatherForecast() {
   const { latitude, longitude, error } = useGeolocation();
   const [data, setData] = useState<WeatherForecastT | null>(null);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const data = await getWeatherForecast(latitude, longitude);
-  //       setData(data);
-  //     } catch (error) {
-  //       alert(`Error fetching weather data: ${error}`);
-  //     }
-  //   };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await getWeatherForecast(latitude, longitude);
+        setData(data);
+      } catch (error) {
+        alert(`Error fetching weather data: ${error}`);
+      }
+    };
 
-  //   fetchData();
-  // }, [latitude, longitude]);
+    fetchData();
+  }, [latitude, longitude]);
 
   // Chart JS doesn't let you import types. For type safety reasons this is used outside of useEffect
-  // const formattedData = data
-  //   ? createLineChartDataFromWeatherForecast(data)
-  //   : null;
-  const formattedData = createLineChartDataFromWeatherForecast(mockData);
+  const formattedData = data
+    ? createLineChartDataFromWeatherForecast(data)
+    : null;
 
-  // geolocation error alert
+  // API sometimes gives cors error, in that case you can use this line of code to see the apps function.
+  // const formattedData = createLineChartDataFromWeatherForecast(mockData);
+
+  // geolocation error alert handler
   if (error) {
     alert(error);
   }
 
   return (
-    <div className="max-w-screen-md mx-auto mt-6 px-4 flex justify-center relative">
+    <div className="max-w-screen-md mx-auto px-4 flex justify-center relative">
       {formattedData ? (
         <Line data={formattedData} options={options} />
       ) : (
-        <p>Weather forecast data is not available.</p>
+        <p className="mt-4 text-slate-600">
+          Weather forecast data is not available for now!
+        </p>
       )}
     </div>
   );
