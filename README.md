@@ -59,5 +59,5 @@ This Weather Forecast app leverages geolocation to provide you with up-to-date w
 To ensure the proper functioning of hooks and functions in this Weather Forecast app, you can run tests:
 `npm run test`
 
-This app is built with Vite, React, TypeScript, Tailwind CSS, npm, Storybook, Vitest and React Testing Library.
+This app is built with Vite, React, TypeScript, Tailwind CSS, ChartJS, Storybook, Vitest and React Testing Library.
 Feel free to explore!
